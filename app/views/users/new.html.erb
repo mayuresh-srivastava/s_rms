@@ -1,2 +1,45 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+         <!--(:user, :url => {:controller => 'users', :action => 'create'}) -->
+
+<%# if @user.errors.any? %>
+ <!--   <div id="error_explanation">  -->
+ <!--     <h2><%#= pluralize(@user.errors.count, "error") %> prohibited this product from being saved:</h2> -->
+
+<!--      <ul> -->
+      <%# @user.errors.full_messages.each do |message| %>
+   <!--     <li><%#= message %></li> -->
+  <!--    <%# end %> -->
+  <!--    </ul>  -->
+<!--    </div>  -->
+   
+  <%# end %>
+  
+      <%= f.label :name, "Enter your Full Name:" %>
+      <%= f.text_field :name, :placeholder => "Enter your name" %><br />
+      <br>
+      <%= f.label :email, "Enter your Email Address:" %>
+      <%= f.email_field :email, :placeholder => "user@domain.com" %><br />
+      <br>
+      <%= f.label :password, "Enter your Password:" %>
+      <%= f.password_field :password, :placeholder => "Enter your password" %><br />
+      <br>
+      <%= f.label :password_confirmation, "Confirm Password:" %>
+      <%= f.password_field :password_confirmation, :placeholder => "Confirm above password" %><br />
+      <br>
+      <%= f.label :username, "Enter Username:" %>
+      <%= f.text_field :username, :placeholder => "Enter your username" %><br />
+      <br>
+      <%= f.submit "Create Account" %>
+      
+<% end %>
+
+ <% if @user.errors.any? %>
+      <ul>
+    <% for message_error in @user.errors.full_messages %>
+      <li> <%= message_error %></li>
+    <% end %>
+      </ul>
+ <% end %>
+

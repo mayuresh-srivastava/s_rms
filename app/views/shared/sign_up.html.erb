@@ -1,0 +1,19 @@
+<%= form_for @user, url: { controller: "user", action: "sign_up" } do %>
+  
+<h1>Sign Up</h1>
+     
+      <%= label_tag :name, "Enter your Full Name:" %>
+      <%= text_field_tag :name, @name, :autofocus => "autofocus", :placeholder => "Enter your name" %><br />
+      <br>
+      <%= label_tag :email, "Enter your Email Address:" %>
+      <%= email_field_tag :email, @email, :placeholder => "user@domain.com" %><br />
+      <br>
+      <%= label_tag :password, "Enter your Password:" %>
+      <%= password_field_tag :password, @password, :placeholder => "Enter your password:" %><br>
+      <br>
+      <%= label_tag :confirm_password, "Confirm Password:" %>
+      <%= password_field_tag :confirm_password, @confirm_password, :placeholder => "Confirm above password:" %><br>
+      <br>
+      <%= submit_tag "Create Account" %>
+      
+<% end %>

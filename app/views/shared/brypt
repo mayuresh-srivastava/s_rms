@@ -1,0 +1,13 @@
+Installing bcrypt 3.1.11 with native extensions
+Installing bcrypt-ruby 3.1.5
+Bundle complete! 13 Gemfile dependencies, 56 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Post-install message from bcrypt-ruby:
+
+#######################################################
+
+The bcrypt-ruby gem has changed its name to just bcrypt.  Instead of
+installing `bcrypt-ruby`, you should install `bcrypt`.  Please update your
+dependencies accordingly.
+
+#######################################################

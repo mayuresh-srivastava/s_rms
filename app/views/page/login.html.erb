@@ -1,0 +1,16 @@
+<h1>Log In</h1>
+
+<%= form_for :user do %>
+     
+      <%= label_tag :email, "Email or Username" %><br><br>
+      <%= text_field_tag :email, @name, :autofocus => "autofocus", :placeholder => "user@domain.com" %><br /><br>
+  
+      <%= label_tag :password, "Password" %><br><br>
+      <%= email_field_tag :password, @email, :placeholder => "******" %><br /><br>
+      
+      <%= check_box_tag :remember, @remember %>Remember me <br><br>
+
+      <%= submit_tag "Log in" %>
+<% end %>
+<br>
+<%= link_to "Sign Up", new_user_path %>&nbsp;&nbsp;<%= link_to "Forgot Password" %>

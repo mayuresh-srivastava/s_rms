@@ -1,14 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>S_RMS</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="wrapper">  
+	<header><!-- header -->
+	 
+	</header><!-- end of header -->
+	
+	<section id="main"> <!-- #main content and sidebar area -->
+	<section id="container"> <!-- #container -->
+			<section id="content">  <!-- #content -->
+	
+<%= render :partial => 'shared/nav' %>
+<div id="notice">
+<%= notice %>
+</div>
 
 <%= yield %>
 
+</section>  <!-- end of #content -->
+		</section>  <!-- end of #container -->
+      <!--
+        <aside id="sidebar">  <!-- sidebar -->
+         
+       <!--   
+        </aside>  <!-- end of sidebar -->
+       
+  </section>
+  
+  <footer>
+    <section id="footer-area">
+       <section id="footer-outer-block">
+            		<aside id="first" class="footer-segment">
+						    </aside><!-- end of #first footer segment -->
+             
+					<aside id="second" class="footer-segment">
+							
+								
+					</aside> <!-- end of #second footer segment -->
+              
+					<aside id="third" class="footer-segment">
+							
+					</aside><!-- end of #third footer segment -->
+				
+					<aside id="fourth" class="footer-segment">
+							
+					</aside> <!-- end of #fourth footer segment -->
+       </section>  <!-- end of #footer-outer-block -->
+
+		</section><!-- end of #footer-area -->
+	</footer>
+
+</div> <!-- #wrapper -->
+   
 </body>
 </html>

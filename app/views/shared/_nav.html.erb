@@ -1,0 +1,22 @@
+<nav><!-- top nav -->
+		<div class="menu">
+			<ul>
+				<li><%= link_to "Home", home_path %></li>
+				<li><%= link_to "About Us", about_us_path %></li>
+		<!--		<li><%#= link_to "Products", products_path %></li>  -->
+		<!--		<li><%#= link_to "Calendar", calendar_path %></li>  -->
+				                         <!--calender_path--> 
+		<!--		<li><%#= link_to "Articles", articles_path %></li>  -->
+		<!--		<li><%#= link_to "Blog", blogs_path %></li>         -->
+				
+				<%# if user_signed_in? %>
+		<!--		   <li><%#= link_to "Logout", destroy_user_session_path, :method => :delete %></li>   -->
+				<%# else %> 
+		<!--		   <li><%#= link_to "Login", new_user_session_path %></li>   -->
+				<%# end %> 
+				
+				<li><%= link_to "Login", login_path %></li> 
+				<li><%= link_to "Contact Us", contact_us_path %></li>
+			</ul>
+		</div>
+	</nav><!-- end of top nav --> 
