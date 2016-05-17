@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+#  get 'sessions/login'
+
+  get 'sessions/home'
+
+  get 'sessions/profile'
+
+  get 'sessions/setting'
+
     resources :students
     resources :users
   
@@ -9,8 +17,12 @@ Rails.application.routes.draw do
 
   get 'contact_us' => 'page#contact_us'
 
-  get 'login' => 'page#login'
-  
+#  get 'login' => 'page#login'
+#  match "login" => "sessions#login", via: [:get, :post]
+   get 'login' => 'sessions#login'
+   post 'login' => 'sessions#login_attempt'
+   get 'logout' => 'sessions#logout'
+   
 # get 'user/sign_up' => 'user#sign_up'
 #  post 'user/sign_up' => 'user#sign_up'
 

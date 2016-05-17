@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
     #attr_accessor :password
     #attr_accessor :password, :password_confirmation
-    
+    EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
     validates_presence_of :name, :email , :password, :password_confirmation, :username 
     validates_length_of :name, maximum: 32
     
-    validates_uniqueness_of :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+    validates_uniqueness_of :email, :format => EMAIL_REGEX
+                                   #format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
     
     validates :password, confirmation: true
     validates_length_of :password, :in => 6..20
@@ -37,8 +38,8 @@ class User < ActiveRecord::Base
     self.password = nil
   end
   
-  def self.authenticate(username_or_email="", login_password="")
-  if  format.match(name_or_email)    
+  def self.authenticate(username_or_email, login_password)
+  if EMAIL_REGEX.match(username_or_email)    
     user = User.find_by_email(username_or_email)
   else
     user = User.find_by_username(username_or_email)
@@ -50,8 +51,8 @@ class User < ActiveRecord::Base
   end
   end  
   
-def match_password(login_password="")
-  encrypted_password == BCrypt::Engine.hash_secret(login_password, salt)
-end
+ def match_password(login_password="")
+  encrypt_password = Digest::SHA1.hexdigest(login_password.to_s)
+ end
 
 end

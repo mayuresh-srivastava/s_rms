@@ -1,0 +1,23 @@
+<h1>Log In</h1>
+
+<%= form_for login_path, :method => 'post' do |f| %>
+   <!--     (:user, :url => {:controller => 'sessions', :action => 'login_attempt'})  -->
+     
+      <%= f.label :email, "Email or Username" %><br><br>
+      <%= f.text_field :email, :placeholder => "user@domain.com" %><br /><br>
+  
+      <%= f.label :password, "Password" %><br><br>
+      <%= f.password_field :password, :placeholder => "******" %><br /><br>
+      
+      <%= f.check_box :remember %>Remember me <br><br>
+
+      <%= f.submit "Log in" %>
+<% end %>
+<br>
+<%= link_to "Sign Up", new_user_path %>&nbsp;&nbsp;<%= link_to "Forgot Password" %>
+
+  <%#= form_tag(:action => 'login_attempt') do %>
+<!--    <p>Username or Email:</br> <%#= text_field_tag(:username_or_email) %></p>  -->
+<!--    <p>Password:</br> <%#= password_field_tag :login_password %></p>  -->
+    <%#= submit_tag("Log In") %>
+  <%# end %>
